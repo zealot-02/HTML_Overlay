@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZEALOT BGMI Overlay</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .overlay-wrapper {
+      position: absolute;
+      bottom: 2%;
+      left: 2%;
+      display: flex;
+      align-items: center;
+      z-index: 9999;
+      pointer-events: none;
+      gap: 20px;
+    }
+
+    .webcam-frame {
+      width: 240px;
+      height: 180px; /* 4:3 ratio (240x180) */
+      border: 3px solid #ffc400;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 200, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .overlay-bar {
+      background: linear-gradient(90deg, #111 0%, #1c1c1c 100%);
+      border: 2px solid #ffaa00;
+      border-radius: 20px;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 0 20px rgba(255, 200, 0, 0.4);
+      animation: glow 2s infinite alternate;
+      height: 35px;
+      max-width: 55vw;
+    }
+
+    .text-content {
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .game-title {
+      color: #ffae00;
+      font-size: 18px;
+      text-shadow: 0 0 8px #ffae00;
+    }
+
+    .upi-id {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px rgba(255, 200, 0, 0.3);
+      }
+      to {
+        box-shadow: 0 0 20px rgba(255, 200, 0, 0.7);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay-wrapper">
+    <div class="webcam-frame">
+      <!-- Webcam feed will be inserted by streaming software -->
+    </div>
+
+    <div class="overlay-bar">
+      <div class="text-content">
+        <div class="game-title">BGMI Live - ZEALOT</div>
+        <div class="upi-id">Donate: 7997500575@ybl</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
